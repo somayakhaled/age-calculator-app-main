@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$Purple: hsl(259, 100%, 65%);
+$Light_red: hsl(0, 100%, 67%);
+$White: hsl(0, 0%, 100%);
+$Off_white: hsl(0, 0%, 94%);
+$Light_grey: hsl(0, 0%, 86%);
+$Smokey_grey: hsl(0, 1%, 44%);
+$Off_black: hsl(0, 0%, 8%);
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 32px;
+    min-height: 100vh;
+    background-color: $Light_grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.container{
+    background-color: $White;
+    border-radius: 10px 10px 80px 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 29rem;
+
+    .inputDate{
+        display: flex;
+        gap: 1rem;
+        font-size: .75rem;
+        color: $Smokey_grey;
+
+        .vertical{
+            display: flex;
+            flex-direction: column;
+            gap: .2rem;
+            font-size: .6rem;
+            letter-spacing: 2px;
+
+            input[type="number"]{
+                padding: .5rem .8rem;
+                border: 1px solid $Light_grey;
+                border-radius: .3rem;
+                width: 5rem;
+                font-size: 1.4rem;
+                font-weight: 800;
+                caret-color: $Purple;
+
+                &::-webkit-inner-spin-button,
+                &::-webkit-outer-spin-button{
+                    -webkit-appearance: none;
+                }
+
+                &:focus{
+                    border-color: $Purple;
+                    outline: none;
+                    cursor: pointer;
+                }
+
+                &:focus::placeholder{
+                    opacity: 0;
+                }
+
+                &::placeholder{
+                    font-family: "Poppins", sans-serif;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    color: $Smokey_grey;
+                }
+            }
+
+            .error{
+                color: $Light_red;
+                letter-spacing: 0;
+                font-weight: 400;
+                font-size: .6rem;
+                font-style: italic;
+            }
+        }
+    }
+    
+    .separator{
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        div{
+            width: 90%;
+            height: 1px;
+            background-color: $Light_grey;
+        }
+
+        button{
+            border-radius: 50%;
+            border: none;
+            background-color: $Purple;
+            padding: .8rem;
+            width: 4rem;
+            height: 3.9rem;
+
+            &:hover{
+                cursor: pointer;
+                background-color: $Off_black;
+            }
+
+            img{
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+        }
+
+    }
+
+    .resultAge{
+        div{
+            font-size: 4rem;
+            font-weight: 800;
+            font-style: italic;
+            line-height: 4.5rem;
+
+            span{
+                color: $Purple;
+            }
+        }
+    }
+}
+
+@media (max-width: 525px){
+    .container{
+        gap: 3rem;
+
+        .inputDate{
+            justify-content: center;
+        }
+
+        .separator{
+            justify-content: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            position: relative;
+            width: 100%;
+
+            div{
+                width: 100%;
+                grid-column: 1 / -1;
+                z-index: 0;
+            }
+
+            button{
+                position: absolute;
+                left: 50%;                   
+                transform: translateX(-50%);   
+                z-index: 1; 
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 456px){
+    .container{
+
+        .resultAge{
+            div{
+                font-size: 3.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px){
+    .container{
+        width: 20rem;
+
+        .resultAge{
+            div{
+                font-size: 3.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 375px){
+    .container{
+        width: 17rem;
+        padding: 2rem 1.5rem;
+        gap: 3rem;
+
+        .inputDate{
+
+            .vertical{
+
+                input[type="number"]{
+                    width: 3.3rem;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .separator{
+            justify-content: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            position: relative;
+            width: 100%;
+
+            div{
+                width: 100%;
+                grid-column: 1 / -1;
+                z-index: 0;
+            }
+
+            button{
+                position: absolute;
+                left: 50%;                   
+                transform: translateX(-50%);   
+                z-index: 1; 
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+        }
+
+        .resultAge{
+            div{
+                font-size: 3rem;
+                line-height: 4rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 320px){
+    .container{
+        width: 16rem;
+        padding: 2rem 1.5rem;
+        gap: 3rem;
+
+        .inputDate{
+
+            .vertical{
+
+                input[type="number"]{
+                    width: 3.3rem;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .separator{
+            justify-content: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            position: relative;
+            width: 100%;
+
+            div{
+                width: 100%;
+                grid-column: 1 / -1;
+                z-index: 0;
+            }
+
+            button{
+                position: absolute;
+                left: 50%;                   
+                transform: translateX(-50%);   
+                z-index: 1; 
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+        }
+
+        .resultAge{
+            div{
+                font-size: 2.8rem;
+                line-height: 4rem;
+            }
+        }
+    }
+}
